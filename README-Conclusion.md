@@ -108,7 +108,8 @@
     +   http://web.cs.ucla.edu/classes/spring11/cs132/kannan/index.html
         + 这个可以
 
-<div style="page-break-after: always;"></div>
+
+
 ## 7. 致谢
 
 + 感谢老师和助教一学期的陪伴，从自己调试代码的过程来看，感觉助教的工作量还是蛮大的，尤其是在最后一部分 `mips` 代码的调试上，感觉还是挺辛苦的。
