@@ -1,0 +1,1 @@
+java -jar kgi.jar < TEST.kg & pause & java -jar pgi.jar < TEST.spg & pause

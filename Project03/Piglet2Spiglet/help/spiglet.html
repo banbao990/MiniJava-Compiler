@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!-- saved from url=(0179)file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod6 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BNF for spiglet.jj</title>
+</head>
+<body>
+<h1 align="CENTER">BNF for spiglet.jj</h1>
+<h2 align="CENTER">NON-TERMINALS</h2>
+<table>
+<tbody><tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod1">Goal</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"MAIN" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod2">StmtList</a> "END" ( <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod3">Procedure</a> )* &lt;EOF&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod2">StmtList</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( ( <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod4">Label</a> )? <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod5">Stmt</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod3">Procedure</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod4">Label</a> "[" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod6">IntegerLiteral</a> "]" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod7">StmtExp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod5">Stmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod8">NoOpStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod9">ErrorStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod10">CJumpStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod11">JumpStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod12">HStoreStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod13">HLoadStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod14">MoveStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod15">PrintStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod8">NoOpStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"NOOP"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod9">ErrorStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"ERROR"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod10" style="
+    color: red;
+">CJumpStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"CJUMP" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a> <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod4">Label</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod11">JumpStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"JUMP" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod4">Label</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod12" style="
+    color: red;
+">HStoreStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"HSTORE" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a> <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod6">IntegerLiteral</a> <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod13" style="
+    color: red;
+">HLoadStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"HLOAD" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a> <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a> <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod6">IntegerLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod14">MoveStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"MOVE" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a> <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod17">Exp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod15" style="
+    color: red;
+">PrintStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"PRINT" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod18">SimpleExp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod17">Exp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod19">Call</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod20">HAllocate</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod21">BinOp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod18">SimpleExp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod7" style="
+    color: red;
+">StmtExp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"BEGIN" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod2">StmtList</a> "RETURN" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod18">SimpleExp</a> "END"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod19" style="
+    color: red;
+">Call</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"CALL" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod18">SimpleExp</a> "(" ( <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a> )* ")"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod20" style="
+    color: red;
+">HAllocate</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"HALLOCATE" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod18">SimpleExp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod21" style="
+    color: red;
+">BinOp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod22">Operator</a> <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a> <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod18">SimpleExp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod22">Operator</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"LT"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"PLUS"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"MINUS"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"TIMES"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod18" style="
+    color: red;
+">SimpleExp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod16">Temp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod6">IntegerLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod4">Label</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod16">Temp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"TEMP" <a href="file:///D:/%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E5%AD%A6%E5%AD%A6%E4%B9%A0/2019-02/B-%E7%BC%96%E8%AF%91%E5%AE%9E%E4%B9%A0/project03/spiglet.html#prod6">IntegerLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod6">IntegerLiteral</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;INTEGER_LITERAL&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod4">Label</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt;</td>
+</tr>
+</tbody></table>
+
+
+</body></html>

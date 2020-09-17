@@ -1,0 +1,177 @@
+<HTML>
+<HEAD>
+<style type="text/css"><!-- 
+body{background-color:#FFFFFF;color:#000000;font-family:Arial,sans-serif;}
+b{color:#500000;}
+a:link,a:visited{color:#336699}
+h2{background-color:#efefef;color:#000000;width:"100%";border-style:none;border-width:thin;padding:0cm;align:center;text-align:center;}
+--></style>
+</HEAD>
+<h2> Software and Documentation</h2>
+
+Language:  Java 1.5.0  (
+<a href="http://java.sun.com/j2se/1.5.0/docs/index.html">documentation</a>, 
+<a href="http://java.sun.com/j2se/1.5.0/docs/api/index.html">API</a>,  
+<a href="http://developer.java.sun.com/developer/onlineTraining/">tutorial</a>,
+<a href="http://java.sun.com/j2se/1.5.0/download.jsp">download</a>).
+<br><br>
+
+Tools:
+<ul>
+
+<li> JTB (
+<a href="#JTB">documentation</a>,
+<a href="http://compilers.cs.ucla.edu/jtb/Files/jtb132.jar">download</a>
+)
+
+<li> JavaCC (
+<a href="https://javacc.dev.java.net/doc/docindex.html">documentation</a>,
+<a href="https://javacc.dev.java.net/servlets/ProjectDocumentList">download</a>
+).
+
+<li> Piglet Interpreter  (
+<a href="#interpreter">documentation</a>,
+<a href="http://compilers.cs.ucla.edu/cs132/software/pgi.jar">download</a>)
+
+<li> Spiglet Parser (
+<a href="#interpreter">documentation</a>,
+<a href="http://compilers.cs.ucla.edu/cs132/software/spp.jar">download</a>)
+
+<li> Kanga Interpreter  (
+<a href="#interpreter">documentation</a>,
+<a href="http://compilers.cs.ucla.edu/cs132/software/kgi.jar">download</a>);
+<a href="http://compilers.cs.ucla.edu/~kchang/class/132_jens/P5/interpreter/">interactive version</a>
+
+<li> SPIM (<a href="http://www.cs.wisc.edu/~larus/spim.html">download</a>)
+</ul>
+
+Sample <a href="Main.java">Main.java</a>
+<br>
+<br>
+Formatting Visitors:
+<ul>
+<li> 
+<a href="http://compilers.cs.ucla.edu/cs132/project/PigletFormatter.java">PigletFormatter.java</a>
+<li> 
+<a href="http://compilers.cs.ucla.edu/cs132/project/KangaFormatter.java">KangaFormatter.java</a>
+<li> 
+<a href="http://compilers.cs.ucla.edu/cs132/project/KangaFormatter.java">MIPSFormatter.java</a>
+</ul>
+Each formatter can be used to format an AST for output in textual format. 
+Remember to use the -printer option when you run JTB on the jj file, 
+which will generate a few visitors necessary for formatting.
+Once that's done, a given AST can be output to standard output as follows:
+<pre>
+   ast.accept(new PigletFormatter());
+   ast.accept(new TreeDumper());
+</pre>
+<br>
+Testscripts:<br>
+<p> Homeworks are tested using automated test scripts. 
+For homework 2, here is a 
+<a href="testscripts/hw2-tester.tgz">hw2-tester.tgz</a>
+with a script that everybody can use to make sure their
+program will work with the grading scripts.
+The tarball contains the test script, a couple of test cases, the
+generated JTB/JavaCC classes, and a ReadMe with instructions on how to
+run the script.
+<br>
+<br>
+Script to grade homework 3: 
+<a href="testscripts/hw3-tester.tgz">hw3-tester.tgz</a>.
+Script to grade homework 4: 
+<a href="testscripts/hw4-tester.tgz">hw4-tester.tgz</a>.
+Script to grade homework 5: 
+<a href="testscripts/hw5-tester.tgz">hw5-tester.tgz</a>.
+Script to grade homework 6: 
+<a href="testscripts/hw6-tester.tgz">hw6-tester.tgz</a>.
+ 
+
+<h2>Other Links</h2>
+<a href="http://www.cs.berkeley.edu/~aiken/moss.html">Detecting software plagiarism</a><br>   
+<a href="http://mindprod.com/jgloss/unmain.html">How to write unmaintainable code</a>
+
+<br>
+<h2>Quick How-to to compile a minijava to piglet compiler</h2> 
+<pre>
+% java -jar jtb.jar <a href="project/minijava.jj">minijava.jj</a>  # generates jtb.out.jj
+
+% javacc jtb.out.jj              # generates a parser with a specified name
+
+# now code the visitors to compile java to piglet.
+
+% javac Main.java                # <a href="Main.java">Main.java</a> contains a call of the parser, and visitors
+                                 # you need to download this file or create your own in your 
+                                 # working directory. (You might get some warnings about 
+                                 # unchecked calls which you can ignore.)
+
+% java Main < p.java > p.pg      # builds a syntax tree for p.java, and  executes 
+                                 # the visitors, output a piglet program
+
+% java -jar pgi.jar < p.pg       # run the piglet program. 
+</pre>
+<br>
+<a NAME="JTB">
+<H2>JTB Overview</H2>
+</a>
+JTB is a syntax tree builder to be used with the Java
+Compiler Compiler (JavaCC) parser generator.&nbsp; It takes a plain
+JavaCC grammar file as input and automatically generates the following:&nbsp;
+<UL>
+<LI>
+A set of syntax tree classes based on the productions in the grammar, utilizing
+the Visitor design pattern.</LI>
+
+<LI>
+Two interfaces: <TT>Visitor</TT> and <TT>GJVisitor</TT>.&nbsp; Two
+depth-first visitors: <TT>DepthFirstVisitor</TT> and <TT>GJDepthFirst</TT>,
+whose default methods simply visit the children of the current node.</LI>
+
+<LI>
+A JavaCC grammar <TT>jtb.out.jj</TT> with the proper annotations to build the syntax tree during
+parsing.</LI>
+</UL>
+New visitors, which subclass <TT>DepthFirstVisitor</TT> or <TT>GJDepthFirst</TT>,
+can then override the default methods and perform various operations on
+and manipulate the generated syntax tree.&nbsp; For more information about
+the Visitor design pattern, see the book <A HREF="http://www.awl.com/cseng/titles/0-201-63361-2/">Design
+Patterns: Elements of Reusable Object-Oriented Software</A>.&nbsp;
+<BR>&nbsp;
+
+<pre>
+Usage:   java -jar jtb.jar [OPTIONS] [input-file]
+         java -jar jtb.jar -h     # to view all available options
+</pre>
+
+<br>
+<a name="interpreter">
+<H2>Using Interpreters</H2>
+</a>
+The Interpreters can be used to test the programs generated by your compiler. 
+The Interpreter should give the same output as the original java program. 
+
+<p>
+To invoke the interpreter use: 
+<TT>java -jar [pgi.jar | kgi.jar] < [input-program]</TT>
+
+<p>
+Since Spiglet is a subset of Piglet, the Piglet interpreter can be used to 
+interpret spiglet programs. A Spiglet Parser has been provided which can be
+used to make sure the program parses as a spiglet program. It can be invoked 
+using <TT>java -jar spp.jar < [Input-program]</TT>. If your program is a spiglet 
+program it will print <i>"Program parsed successfully".</i> This does not mean that
+the program will run correctly make sure you run it with the piglet interpreter 
+to check it runs correctly.
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</BODY>
+</HTML>
+
+
+
+
+
+
+

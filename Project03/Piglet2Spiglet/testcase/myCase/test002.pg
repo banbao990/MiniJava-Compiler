@@ -1,0 +1,47 @@
+MAIN
+    MOVE TEMP 20 3
+    CJUMP LT TEMP 20 4 L0
+    MOVE TEMP 21
+    BEGIN
+        MOVE TEMP 22 HALLOCATE 4
+        HSTORE TEMP 22 0 Cat_f
+        MOVE TEMP 23 HALLOCATE 4
+        HSTORE TEMP 23 0 TEMP 22
+    RETURN
+        TEMP 23
+    END
+    JUMP L1
+L0 NOOP
+    MOVE TEMP 21
+    BEGIN
+        MOVE TEMP 24 HALLOCATE 4
+        HSTORE TEMP 24 0 Animal_f
+        MOVE TEMP 25 HALLOCATE 4
+        HSTORE TEMP 25 0 TEMP 24
+    RETURN
+        TEMP 25
+    END
+L1 NOOP
+    PRINT CALL
+    BEGIN
+        MOVE TEMP 26 TEMP 21
+    RETURN
+        BEGIN
+            HLOAD TEMP 28 TEMP 26 0
+            HLOAD TEMP 27 TEMP 28 0
+        RETURN
+            TEMP 27
+        END
+    END
+    ( TEMP 26 )
+END
+Animal_f [ 1 ]
+BEGIN
+RETURN
+    1
+END
+Cat_f [ 1 ]
+BEGIN
+RETURN
+    0
+END
